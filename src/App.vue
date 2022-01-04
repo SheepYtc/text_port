@@ -1,32 +1,41 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div>
+    <!-- <Calendar_t></Calendar_t> -->
+   <div > <router-view></router-view></div>
+
+    <!-- <Headtop></Headtop> -->
+    <br><br><br>
+    <tabbar></tabbar>
+    <!-- <button @click="fasong">发送</button> -->
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import Calendar_t from './components/calendar_t.vue'
+// import Headtop from "@/views/Headtop.vue"
+import tabbar from './views/tabbar.vue'
+  export default {
+  components: { tabbar, Calendar_t },
+    
+    data() {
+      return {
+        key:'919846bbec334e6e79a885168dd8626b',
+        itemList:[]
+      }
+    },
+  // methods:{
+  //  async fasong(){
+  //    const {data:res} = await this.axios.get("http://api.tianapi.com/lunar/index?key="+this.key+"&data=2021-12-12")
+  //     console.log(res);
+  //  }
+  // }
   }
+</script>
+
+<style lang="less">
+*{
+  margin: 0;
+  padding: 0;
 }
-</style>
+
+</style>  
